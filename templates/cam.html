@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webcam Capture</title>
+    <style>
+      body {
+        background: url('static/css/bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        margin: 0;
+      }
+
+      nav {
+        text-align: left;
+        background-color: none;
+        font-family: Helvetica, sans-serif, Arial;
+        position: relative;
+        top: 30px;
+      }
+    
+      ul.main-nav {
+        padding-right: 2%;
+        list-style-type: none;
+        margin: 0;
+        text-align: left;
+      }
+    
+      ul.main-nav li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    
+      ul.main-nav li a {
+        color: rgb(235, 216, 131);
+        font-size: 20px;
+        text-decoration: none;
+      }
+      
+      ul.main-nav li a.homepage {
+        color: rgb(222, 233, 161);
+        font-weight: bold;
+      }
+
+      /* Style the Capture button */
+      #capture {
+        background-color: rgb(222, 233, 161);
+        color: rgb(30, 30, 30);
+        font-size: 18px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #capture:hover {
+        background-color: rgb(200, 210, 140);
+      }
+    </style>
+    
+    <!-- Add mobile view meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  </head>
+  <body>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="/" class="homepage">HOME PAGE</a></li>                
+      </ul>
+    </nav>
+  
+    <div style="width: 100%; padding-top: 1%;">
+      <div class="header-content">
+        <h1 style="text-align: center; color: rgb(222, 233, 161)"><span class="header-content-text">WebCam</span></h1>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <video id="video" width="540" height="380" autoplay></video>
+    </div>
+    <br>
+    <div style="text-align:center;">
+      <button id="capture">Capture Image</button>
+    </div>
+    <script>
+      const video = document.getElementById('video');
+      const captureButton = document.getElementById('capture');
+
+      // Get access to the webcam stream
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+        })
+        .catch(error => {
+          console.error('Unable to access the webcam', error);
+        });
+
+      // Capture and save the image when the button is clicked
+      captureButton.addEventListener('click', () => {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL('image/jpeg');
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'capture.jpg';
+        link.click();
+      });
+    </script>
+  </body>
+</html>

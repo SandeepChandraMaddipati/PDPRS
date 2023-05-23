@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+   <head>
+      <title>Image Feedback System</title>
+      <style>
+         #wrapper {
+            display: flex;
+            justify-content: center;
+         }
+         
+       /* Background image */
+       body {
+       background-image: url('static/css/feedback.png');
+       /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+
+         }
+
+   .container {
+      margin: auto;
+      width: 70%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+      text-align: left;
+   }
+   .file-input {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+   }
+   .file-input:hover {
+      background-color: #ddd;
+   }
+
+   .file-input:focus {
+      outline: none;
+   }
+
+   input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+   }
+
+   input[type="submit"]:hover {
+      background-color: #45a049;
+   }
+   /* Upload and choose file buttons */
+
+
+.custom-file-input {
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #fff;
+   border: none;
+   border-radius: 5px;
+   padding: 10px 20px;
+   font-size: 16px;
+   cursor: pointer;
+   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file-input:hover {
+   background-color: #ddd;
+}
+
+.custom-file-input:focus {
+   outline: none;
+}
+      /* Checkbox container */
+      .class-container {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-column-gap: 50px;
+    }
+      /* Gradient */
+      .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom right, #0093E9, #80D0C7);
+        opacity: 0.9;
+      }
+      h1 {
+			font-size: 36px;
+			text-align: center;
+		}
+
+      h2 {
+			font-size: 20px;
+			text-align: center;
+		}
+
+      .highlighted {
+         background-color: #667eea; /* Set the background color to match the webpage theme */
+         color: #ffffff; /* Set the text color to white for better visibility */
+         padding: 10px; /* Add padding to create some space around the text */
+         border-radius: 5px; /* Apply rounded corners to the background */
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+      }
+
+      </style>
+   </head>
+   <body>
+      <div class="container">
+       <center> <h1 class="highlighted">Pest Image Feedback System</h1></center> 
+      <h3>Upload the image of the pest and select the correct pest name: </h3>
+      <form action="/feedbacker" method="post" enctype="multipart/form-data">
+         <input type="file" name="file" accept="image/*" class="file-input"><br>
+         <!-- <p>&ensp;</p> -->
+         <input type="checkbox" name="checkbox" value="Adristyrannus"> Adristyrannus<br>
+         <input type="checkbox" name="checkbox" value="Aleurocanthus spiniferus"> Aleurocanthus spiniferus<br>
+         <input type="checkbox" name="checkbox" value="alfalfa plant bug"> Alfalfa plant bug<br>
+         <input type="checkbox" name="checkbox" value="alfalfa seed chalcid" />Alfalfa seed chalcid<br>
+          <input type="checkbox" name="checkbox" value="alfalfa weevil" />Alfalfa weevil<br>
+          <input type="checkbox" name="checkbox" value="Ampelophaga" />Ampelophaga<br>
+      
+          <input type="checkbox" name="checkbox" value="aphids" />Aphids<br>
+          <input type="checkbox" name="checkbox" value="Aphis citricola Vander Goot" />Aphis citricola Vander Goot<br>
+          <input type="checkbox" name="checkbox" value="Apolygus lucorum" />Apolygus lucorum<br>
+      
+          <input type="checkbox" name="checkbox" value="army worm" />Army worm<br>
+          <input type="checkbox" name="checkbox" value="asiatic rice borer" />Asiatic rice borer<br>
+          <input type="checkbox" name="checkbox" value="Bactrocera tsuneonis" />Bactrocera tsuneonis<br>
+      
+          <input type="checkbox" name="checkbox" value="beet army worm" />beet army worm<br>
+          <input type="checkbox" name="checkbox" value="beet fly" />Beet fly<br>
+          <input type="checkbox" name="checkbox" value="Beet spot flies" />Beet spot flies<br>
+          
+          <input type="checkbox" name="checkbox" value="beet weevil" />Beet weevil<br>
+          <input type="checkbox" name="checkbox" value="beetle" />Beetle<br>
+          <input type="checkbox" name="checkbox" value="bird cherry-oataphid" />Bird cherry-oataphid<br>
+             
+          <input type="checkbox" name="checkbox" value="black cutworm" />Black cutworm<br>
+          <input type="checkbox" name="checkbox" value="Black hairy" />Black hairy<br>
+          <input type="checkbox" name="checkbox" value="blister beetle" />Blister beetle<br>
+     
+          <input type="checkbox" name="checkbox" value="bollworm" />Bollworm<br>
+          <input type="checkbox" name="checkbox" value="Brevipoalpus lewisi McGregor" />Brevipoalpus lewisi McGregor<br>
+          <input type="checkbox" name="checkbox" value="brown plant hopper" />Brown plant hopper<br>
+
+          <input type="checkbox" name="checkbox" value="cabbage army worm" />Cabbage army worm<br>
+          <input type="checkbox" name="checkbox" value="cerodonta denticornis" />Cerodonta denticornis<br>
+          <input type="checkbox" name="checkbox" value="Ceroplastes rubens" />Ceroplastes rubens<br>
+
+          <input type="checkbox" name="checkbox" value="Chlumetia transversa" />Chlumetia transversa<br>
+          <input type="checkbox" name="checkbox" value="Chrysomphalus aonidum" />Chrysomphalus aonidum<br>
+          <input type="checkbox" name="checkbox" value="Cicadella viridis" />Cicadella viridis<br>
+
+          <input type="checkbox" name="checkbox" value="Cicadellidae" />Cicadellidae<br>
+          <input type="checkbox" name="checkbox" value="Colomerus vitis" />Colomerus vitis<br>
+          <input type="checkbox" name="checkbox" value="corn borer" />Corn borer<br>
+
+          <input type="checkbox" name="checkbox" value="corn earworm" />Corn earworm<br>
+          <input type="checkbox" name="checkbox" value="cutworm" />Cutworm<br>
+          <input type="checkbox" name="checkbox" value="Dacus dorsalis(Hendel)" />Dacus dorsalis(Hendel)<br>
+
+          <input type="checkbox" name="checkbox" value="Dasineura sp" />Dasineura sp<br>
+          <input type="checkbox" name="checkbox" value="Deporaus marginatus Pascoe" />Deporaus marginatus Pascoe<br>
+          <input type="checkbox" name="checkbox" value="english grain aphid" />English grain aphid<br>
+
+          <input type="checkbox" name="checkbox" value="Erythroneura apicalis" />Erythroneura apicalis<br>
+          <input type="checkbox" name="checkbox" value="fall armyworm" />Fall armyworm<br>
+          <input type="checkbox" name="checkbox" value="flax budworm" />Flax budworm<br>
+
+          <input type="checkbox" name="checkbox" value="flea beetle" />Flea beetle<br>
+          <input type="checkbox" name="checkbox" value="Fruit piercing moth" />Fruit piercing moth<br>
+          <input type="checkbox" name="checkbox" value="Gall fly" />Gall fly<br>
+
+          <input type="checkbox" name="checkbox" value="grain spreader thrips" />Grain spreader thrips<br>
+          <input type="checkbox" name="checkbox" value="grasshopper" />Grasshopper<br>
+          <input type="checkbox" name="checkbox" value="green bug" />Green bug<br>
+          
+          <input type="checkbox" name="checkbox" value="grub" />Grub<br>
+          <input type="checkbox" name="checkbox" value="Icerya purchasi Maskell" />Icerya purchasi Maskell<br>
+          <input type="checkbox" name="checkbox" value="Indigo caterpillar" />Indigo caterpillar<br>
+          
+          <input type="checkbox" name="checkbox" value="Jute aphid" />Jute aphid<br>
+          <input type="checkbox" name="checkbox" value="Jute hairy" />Jute hairy<br>
+          <input type="checkbox" name="checkbox" value="Jute red mite" />Jute red mite<br>
+          <input type="checkbox" name="checkbox" value="Jute semilooper" />Jute semilooper<br>
+         <input type="checkbox" name="checkbox" value="Jute stem girdler" />Jute stem girdler<br>
+         <input type="checkbox" name="checkbox" value="Jute Stem Weevil" />Jute stem weevil<br>
+         <input type="checkbox" name="checkbox" value="Jute stick insect" />Jute stick insect<br>
+         <input type="checkbox" name="checkbox" value="large cutworm" />Large cutworm<br>
+         <input type="checkbox" name="checkbox" value="Lawana imitata Melichar" />Lawana imitata melichar<br>
+         <input type="checkbox" name="checkbox" value="Leaf beetle" />Leaf beetle<br>
+         <input type="checkbox" name="checkbox" value="legume blister beetle" />Legume blister beetle<br>
+         <input type="checkbox" name="checkbox" value="Limacodidae" />Limacodidae<br>
+         <input type="checkbox" name="checkbox" value="Locust" />Locust<br>
+         <input type="checkbox" name="checkbox" value="Locustoidea" />Locustoidea<br>
+         <input type="checkbox" name="checkbox" value="longlegged spider mite" />Longlegged spider mite<br>
+         <input type="checkbox" name="checkbox" value="Lycorma delicatula" />Lycorma delicatula<br>
+         <input type="checkbox" name="checkbox" value="lytta polita" />Lytta polita<br>
+         <input type="checkbox" name="checkbox" value="Mango flat beak leafhopper" />Mango flat beak leafhopper<br>
+         <input type="checkbox" name="checkbox" value="meadow moth" />Meadow moth<br>
+         <input type="checkbox" name="checkbox" value="Mealybug" />Mealybug<br>
+         <input type="checkbox" name="checkbox" value="Miridae" />Miridae<br>
+         <input type="checkbox" name="checkbox" value="mites" />Mites<br>
+         <input type="checkbox" name="checkbox" value="mole cricket" />Mole cricket<br>
+         <input type="checkbox" name="checkbox" value="Nipaecoccus vastalor" />Nipaecoccus vastalor<br>
+         <input type="checkbox" name="checkbox" value="odontothrips loti" />Odontothrips loti<br>
+         <input type="checkbox" name="checkbox" value="oides decempunctata" />Oides decempunctata<br>
+         <input type="checkbox" name="checkbox" value="paddy stem maggot" />Paddy stem maggot<br>
+         <input type="checkbox" name="checkbox" value="Panonchus citri McGregor" />Panonchus citri mcgregor<br>
+         <input type="checkbox" name="checkbox" value="Papilio xuthus" />Papilio xuthus<br>
+         <input type="checkbox" name="checkbox" value="parathrene regalis" />Parathrene regalis<br>
+         <input type="checkbox" name="checkbox" value="Parlatoria zizyphus Lucus" />Parlatoria zizyphus lucus<br>
+         <input type="checkbox" name="checkbox" value="peach borer" />Peach borer<br>
+         <input type="checkbox" name="checkbox" value="penthaleus major" />Penthaleus major<br>
+         <input type="checkbox" name="checkbox" value="Phyllocnistis citrella Stainton" />Phyllocnistis citrella stainton<br>
+         <input type="checkbox" name="checkbox" value="Phyllocoptes oleiverus ashmead" />Phyllocoptes oleiverus ashmead<br>
+         <input type="checkbox" name="checkbox" value="Pieris canidia" />Pieris canidia<br>
+         <input type="checkbox" name="checkbox" value="Pod borer" />Pod borer<br>
+         <input type="checkbox" name="checkbox" value="Polyphagotars onemus latus" />Polyphagotars onemus latus<br>
+         <input type="checkbox" name="checkbox" value="Potosiabre vitarsis" />Potosiabre vitarsis<br>
+         <input type="checkbox" name="checkbox" value="Prodenia litura" />Prodenia litura<br>
+         <input type="checkbox" name="checkbox" value="Pseudococcus comstocki Kuwana" />Pseudococcus comstocki kuwana<br>
+         <input type="checkbox" name="checkbox" value="red spider" />Red spider<br>
+         <input type="checkbox" name="checkbox" value="Rhytidodera bowrinii white" />Rhytidodera bowrinii white<br>
+         <input type="checkbox" name="checkbox" value="rice gall midge" />Rice gall midge<br>
+         <input type="checkbox" name="checkbox" value="rice leaf caterpillar" />Rice leaf caterpillar<br>
+         <input type="checkbox" name="checkbox" value="rice leaf roller" />Rice leaf roller<br>
+         <input type="checkbox" name="checkbox" value="rice leafhopper" />Rice leafhopper<br>
+         <input type="checkbox" name="checkbox" value="rice shell pest" />Rice shell pest<br>
+         <input type="checkbox" name="checkbox" value="Rice Stemfly" />Rice stemfly<br>
+         <input type="checkbox" name="checkbox" value="rice water weevil" />Rice water weevil<br>
+         <input type="checkbox" name="checkbox" value="Salurnis marginella Guerr" />Salurnis marginella guerr<br>
+         <input type="checkbox" name="checkbox" value="sawfly" />Sawfly<br>
+         <input type="checkbox" name="checkbox" value="Scirtothrips dorsalis Hood" />Scirtothrips dorsalis hood<br>
+         <input type="checkbox" name="checkbox" value="sericaorient alismots chulsky" />Sericaorient alismots chulsky<br>
+         <input type="checkbox" name="checkbox" value="small brown plant hopper" />Small brown plant hopper<br>
+         <input type="checkbox" name="checkbox" value="Spilosoma Obliqua" />Spilosoma obliqua<br>
+         <input type="checkbox" name="checkbox" value="stem borer" />Stem borer<br>
+         <input type="checkbox" name="checkbox" value="Sternochetus frigidus" />Sternochetus frigidus<br>
+         <input type="checkbox" name="checkbox" value="tarnished plant bug" />Tarnished plant bug<br>
+         <input type="checkbox" name="checkbox" value="Termite" />Termite<br>
+         <input type="checkbox" name="checkbox" value="Termite odontotermes (Rambur)" />Termite odontotermes (rambur)<br>
+         <input type="checkbox" name="checkbox" value="Tetradacus c Bactrocera minax" />Tetradacus c bactrocera minax<br>
+         <input type="checkbox" name="checkbox" value="therioaphis maculata Buckton" />Therioaphis maculata buckton<br>
+         <input type="checkbox" name="checkbox" value="Thrips" />Thrips<br>
+         <input type="checkbox" name="checkbox" value="Toxoptera aurantii" />Toxoptera aurantii<br>
+         <input type="checkbox" name="checkbox" value="Toxoptera citricidus" />Toxoptera citricidus<br>
+         <input type="checkbox" name="checkbox" value="Trialeurodes vaporariorum" />Trialeurodes vaporariorum<br>
+         <input type="checkbox" name="checkbox" value="Unaspis yanonensis" />Unaspis yanonensis<br>
+         <input type="checkbox" name="checkbox" value="Viteus vitifoliae" />Viteus vitifoliae<br>
+         <input type="checkbox" name="checkbox" value="wheat blossom midge" />Wheat blossom midge<br>
+         <input type="checkbox" name="checkbox" value="wheat phloeothrips" />Wheat phloeothrips<br>
+         <input type="checkbox" name="checkbox" value="wheat sawfly" />Wheat sawfly<br>
+         <input type="checkbox" name="checkbox" value="white backed plant hopper" />White backed plant hopper<br>
+         <input type="checkbox" name="checkbox" value="white margined moth" />White margined moth<br>
+         <input type="checkbox" name="checkbox" value="whitefly" />Whitefly<br>
+         <input type="checkbox" name="checkbox" value="wireworm" />Wireworm<br>
+         <input type="checkbox" name="checkbox" value="Xylotrechus" />Xylotrechus<br>
+         <input type="checkbox" name="checkbox" value="yellow cutworm" />Yellow cutworm<br>
+         <input type="checkbox" name="checkbox" value="Yellow Mite" />Yellow mite<br>
+         <input type="checkbox" name="checkbox" value="yellow rice borer" />Yellow rice borer<br>
+        
+         <br><br>
+        <center> <input type="submit" value="Upload"></center>
+      </form>
+   </div>
+   <script>
+      const submitBtn = document.querySelector("#submit-btn");
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", () => {
+          checkboxes.forEach((cb) => {
+            if (cb !== checkbox) {
+              cb.disabled = true;
+            } else {
+              cb.disabled = false;
+            }
+          });
+        });
+      });
+    </script>
+   </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webcam Capture</title>
+  </head>
+  <body>
+    <h1>Webcam Capture</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <br>
+    <button id="capture">Capture Image</button>
+    <script>
+      const video = document.getElementById('video');
+      const captureButton = document.getElementById('capture');
+
+      // Get access to the webcam stream
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+        })
+        .catch(error => {
+          console.error('Unable to access the webcam', error);
+        });
+
+      // Capture and save the image when the button is clicked
+      captureButton.addEventListener('click', () => {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL('image/jpeg');
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'capture.jpg';
+        link.click();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src="webcam.min.js"></script>
+</head>
+<body>
+    <h1>Take a picture with WebcamJS</h1>
+
+    <!-- A button for taking snapshot -->
+    <button id="snap" onclick="take_snapshot()">Take Snapshot</button>
+
+    <!-- A div element for showing webcam video -->
+    <div id="my_camera"></div>
+
+    <!-- A div element for showing snapshot image -->
+    <div id="my_result"></div>
+
+    <script language="JavaScript">
+        // Attach a video stream to the camera
+        Webcam.set({
+            width: 320,
+            height: 240,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+        Webcam.attach( '#my_camera' );
+
+        // Take a snapshot when button is clicked
+        function take_snapshot() {
+            // Take snapshot and get image data
+            Webcam.snap( function(data_uri) {
+                // Display results in page
+                document.getElementById('my_result').innerHTML = 
+                    '<img src="'+data_uri+'"/>';
+            } );
+        }
+    </script>
+</body>
+</html>

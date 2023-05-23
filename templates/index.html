@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/grid.css')}}">
+    <link rel='stylesheet' href="{{url_for('static' , filename = 'css/style.css')}}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet" type='text/css'>
+    <title>Pest Detection WebApp</title>
+    <meta name="keywords" content="cutom file input, styling, label, cross-browser, accessible, input type file" />
+
+    <style>
+        .content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('static/css/front.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-content {
+            padding-top: 0.1%;
+        }
+
+        .header-content-text {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .upload-section {
+            /* Add your styles for the upload section here */
+        }
+
+        .footer {
+            /* Add your styles for the footer here */
+        }
+
+        .header-content-sub {
+            /* Add your styles for the header content sub here */
+        }
+
+        .header-content-info {
+            /* Add your styles for the header content info here */
+        }
+
+        /* Add any additional styles you may need */
+    </style>
+
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="index-main">
+
+            <div class="header-content">
+                <h2 class="header-content-text">Pest Detection and Pesticide Recommendation System</h2>
+            </div>            
+            <div class="header-content-sub">
+                <p class="header-content-info">This model can be used to detect pests and give pesticide suggestions.</p>
+            </div>
+            
+            <br>
+            <div class="upload-section">
+
+                <div class="upload-file">
+                    <form class="file-form" action="/success" method="post", enctype="multipart/form-data">
+                        <input class="file-form-input" type="file" name="file" />
+                        <button class="btn btn-success btn-lg">Upload</button>
+                    </form>
+                </div>
+
+                <div class="uploadOR">
+                    <span>OR</span>
+                </div>
+
+                <!-- <div class="upload-link">
+                    <form class="link-form" action="/success" method="post", enctype="multipart/form-data">
+                        <input class="link-form-input" type="text" maxlength="1000" name="link" placeholder="Paste the image URL" />
+                        <button class="btn btn-success btn-lg">Proceed</button>
+                    </form>
+                </div>
+
+                <div class="uploadOR">
+                    <span>OR</span>
+                </div> -->
+
+                <div class="camera">
+                    <form class="link-form" action="/camera" method="post", enctype="multipart/form-data">
+                        <h4>
+                            <p style="color:rgb(255, 255, 255)">Capture an Image and Upload it to the webpage to get the results</p>
+                        </h4>
+                        <button class="btn btn-success btn-lg">Capture</button>
+                    </form>
+                </div>
+
+                <div class="header-content-sub">
+                    <p style="text-align: center; margin-top: 15px; color: red" class="header-content-info">{{error}}</p>
+                </div>
+                <br>
+                <br>
+                <div class="footer">
+                    <div class="header-content-sub">
+                        <p style="text-align: center; color: aliceblue;">Copyright © 2023 Group 6, Amrita University. All rights reserved.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

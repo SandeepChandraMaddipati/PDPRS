@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Feedback</title>
+    <style>
+       /* Background image */
+       body {
+        background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		color: rgb(0, 0, 0);
+		font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Gradient */
+      .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom right, #0093E9, #80D0C7);
+        opacity: 0.9;
+      }
+
+      /* Main container */
+      .container {
+        margin: auto;
+        width: 50%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      /* Checkbox container */
+      .class-container {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-column-gap: 50px;
+    }
+    .checkbox-container {
+			display: flex;
+			flex-wrap: wrap;
+      align-items: center;
+			justify-content: space-between;
+		}
+		.checkbox-column {
+			flex-basis: calc(33.33% - 10px);
+			margin-bottom: 10px;
+		}
+
+      /* Button container */
+      .button-container {
+        margin-top: 20px;
+      }
+      
+      /* Button */
+      .button {
+        background-color: #0093E9;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      /* Disabled button */
+      .button.disabled {
+        background-color: #ddd;
+        color: #aaa;
+        cursor: not-allowed;
+      }
+      
+      /* Background pest */
+      .pest {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url('https://drive.google.com/file/d/1ATM0YOHwoUYjC3Sc0heNWx3y-KT_703h/view?usp=share_link');
+        background-repeat: no-repeat;
+        background-size: 600px;
+        background-position: center;
+        opacity: 0.1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Classification</h1>
+      <form>
+        <input type="file" name="image" accept="image/*" />
+        
+        <div class="checkbox-container">
+          <label><input type="checkbox" name="Adristyrannus" value="Class 1" />Adristyrannus</label>
+          <label><input type="checkbox" name="Aleurocanthus spiniferus" value="Class 2" />Aleurocanthus spiniferus</label>
+          <label><input type="checkbox" name="Alfalfa plant bug" value="Class 3" />Alfalfa plant bug</label>
+     
+          <label><input type="checkbox" name="Alfalfa seed chalcid" value="Class 4" />Alfalfa seed chalcid</label>
+          <label><input type="checkbox" name="Alfalfa weevil" value="Class 5" />Alfalfa weevil</label>
+          <label><input type="checkbox" name="Ampelophaga" value="Class 6" />Ampelophaga</label>
+      
+          <label><input type="checkbox" name="aphids" value="Class 7" />Aphids</label>
+          <label><input type="checkbox" name="Aphis citricola Vander Goot" value="Class 8" />Aphis citricola Vander Goot</label>
+          <label><input type="checkbox" name="Apolygus lucorum" value="Class 9" />Apolygus lucorum</label>
+      
+          <label><input type="checkbox" name="army worm" value="Class 10" />Army worm</label>
+          <label><input type="checkbox" name="asiatic rice borer" value="Class 11" />Asiatic rice borer</label>
+          <label><input type="checkbox" name="Bactrocera tsuneonis" value="Class12" />Bactrocera tsuneonis</label>
+      
+          <label><input type="checkbox" name="beet army worm" value="Class 13" />beet army worm</label>
+          <label><input type="checkbox" name="beet fly" value="Class 14" />Beet fly</label>
+          <label><input type="checkbox" name="Beet spot flies" value="Class 15" />Beet spot flies</label>
+          
+          <label><input type="checkbox" name="beet weevil" value="Class 16" />Beet weevil</label>
+          <label><input type="checkbox" name="beetle" value="Class 17" />Beetle</label>
+          <label><input type="checkbox" name="bird cherry-oataphid" value="Class 18" />Bird cherry-oataphid</label>
+             
+          <label><input type="checkbox" name="black cutworm" value="Class 19" />Black cutworm</label>
+          <label><input type="checkbox" name="Black hairy" value="Class 20" />Black hairy</label>
+          <label><input type="checkbox" name="blister beetle" value="Class 21" />Blister beetle</label>
+     
+        </div>
+        <button type="submit" id="submit-btn">Submit</button>
+      </form>
+    </div>
+    <script>
+      const submitBtn = document.querySelector("#submit-btn");
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", () => {
+          checkboxes.forEach((cb) => {
+            if (cb !== checkbox) {
+              cb.disabled = true;
+            } else {
+              cb.disabled = false;
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
