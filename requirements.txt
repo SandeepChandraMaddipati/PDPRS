@@ -8,7 +8,7 @@ Flask-Cors==3.0.10
 tensorflow==2.10.0
 uuid
 plot-keras-history==1.1.38
-opencv-contrib-python==3.4.2.16
+opencv-contrib-python
 opencv-python==3.4.2.16
 seaborn==0.12.2
 matplotlib==3.5.3
