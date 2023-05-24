@@ -27,7 +27,7 @@ import modeler
 import pathlib
 import random
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = load_model(os.path.join(BASE_DIR , 'mobilenet_final.hdf5'))
 camera = cv2.VideoCapture(0)
@@ -322,6 +322,6 @@ def upload_file():
     return render_template('upload.html')
 
 if __name__ == "__main__":
-    app.run(debug = False)
+    app.run()
 
 
