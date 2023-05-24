@@ -26,13 +26,6 @@ import Dataloader
 import modeler
 import pathlib
 import random
-import gunicorn
-
-gunicorn_options = {
-    'bind': '127.0.0.1:8000',  # Replace with your desired host and port
-    'workers': 4,  # Number of worker processes
-    'timeout': 180,  # Worker timeout in seconds
-}
 
 app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
