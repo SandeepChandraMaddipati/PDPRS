@@ -9,7 +9,7 @@ tensorflow==2.10.0
 uuid
 plot-keras-history==1.1.38
 opencv-contrib-python
-opencv-python==3.4.2.16
+opencv-python
 seaborn==0.12.2
 matplotlib==3.5.3
 matplotlib-inline==0.1.6
